@@ -1,12 +1,12 @@
-* Concurrency(동시성) : 한번에 여러개를 수행 하는것
-     • 사용자 인터랙션 처리
-     • 네트워킹
-     • 백그라운드에서 파일 다운로드
-     • 파일 저장하고 읽기
+1. Concurrency(동시성) : 한번에 여러개를 수행 하는것
+     - 사용자 인터랙션 처리
+     - 네트워킹
+     - 백그라운드에서 파일 다운로드
+     - 파일 저장하고 읽기
 
-  * GCD(Grand Central Patch) API : C기반의 저수준 API, 코드 블럭 GCD에 넘기면 스레드를 할당하고 안전하게 수행/처리 해줌
-     • Queue : First-in First-out 먼저 들어온 것부터 먼저 나감.
-     • DispatchQueue의 타입
+2. GCD(Grand Central Patch) API : C기반의 저수준 API, 코드 블럭 GCD에 넘기면 스레드를 할당하고 안전하게 수행/처리 해줌
+     * Queue : First-in First-out 먼저 들어온 것부터 먼저 나감.
+     * DispatchQueue의 타입
          1. Main Queue : 메인 스레드에서 작동하는 Queue
            ex) DispatchQueue.main.async {}
          2. Global Queue : 시스템에 의해 관리되는 Concurrent Queue(동시성)
@@ -21,4 +21,4 @@
            ex) let concurrentQueue = DispatchQueue(label: "concurrent", qos: .background, attributes: .concurrent)
                let serialQueue = DispatchQueue(label: "serial", qos: .background)
 
-  * Sync(앞에 작업이 끝나고 나서 다음 작업을 시작) & Async(앞에 작업이 끝나지 않았음에도 다음 작업을 시작)
+3. Sync(앞에 작업이 끝나고 나서 다음 작업을 시작) & Async(앞에 작업이 끝나지 않았음에도 다음 작업을 시작)
