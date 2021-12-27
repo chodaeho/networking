@@ -43,3 +43,17 @@ relativeURL?.query
 relativeURL?.baseURL
 
 
+// URLComponent
+
+var urlComponent = URLComponents(string: "https://news.naver.com/main/main.naver?")
+let modeQuery = URLQueryItem(name: "mode", value: "LSD")
+let midQuery = URLQueryItem(name: "mid", value: "shm")
+let sidQuery = URLQueryItem(name: "sid1", value: "100")
+
+urlComponent?.queryItems?.append(modeQuery)
+urlComponent?.queryItems?.append(midQuery)
+urlComponent?.queryItems?.append(sidQuery)
+
+urlComponent?.url
+urlComponent?.string
+urlComponent?.queryItems
