@@ -5,14 +5,14 @@ let config = URLSessionConfiguration.default
 let session = URLSession(configuration: config)
 
 // URL
-var urlComponent = URLComponents(string: "https://news.naver.com/main/main.naver?")!
-let modeQuery = URLQueryItem(name: "mode", value: "LSD")
-let midQuery = URLQueryItem(name: "mid", value: "shm")
-let sidQuery = URLQueryItem(name: "sid1", value: "100")
+var urlComponent = URLComponents(string: "https://itunes.apple.com/search?")!
+let mediaQuery = URLQueryItem(name: "media", value: "music")
+let entityQuery = URLQueryItem(name: "entity", value: "song")
+let termQuery = URLQueryItem(name: "term", value: "지드래곤")
 
-urlComponent.queryItems?.append(modeQuery)
-urlComponent.queryItems?.append(midQuery)
-urlComponent.queryItems?.append(sidQuery)
+urlComponent.queryItems?.append(mediaQuery)
+urlComponent.queryItems?.append(entityQuery)
+urlComponent.queryItems?.append(termQuery)
 
 let requestURL = urlComponent.url!
 
@@ -35,3 +35,4 @@ let dataTask = session.dataTask(with: requestURL) { data, response, error in
 }
 
 dataTask.resume()
+ 
